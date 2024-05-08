@@ -6,7 +6,7 @@ from ECC.utils import generate_device_id
 
 
 def generate_keys():
-    key = ECC.generate(curve='P-521')  # 使用 P-256 曲线
+    key = ECC.generate(curve='P-521')  # 使用 P-521 曲线
     private_key = key.export_key(format='PEM')
     public_key = key.public_key().export_key(format='PEM')
     return private_key.encode(), public_key.encode()  # 转换为 bytes 类型
