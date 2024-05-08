@@ -1,7 +1,6 @@
 import sqlite3
 
 def create_or_open_database(db_file):
-    """创建或打开数据库并确保表存在"""
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
     c.execute('''
@@ -21,7 +20,6 @@ def insert_user(conn, name, age):
     conn.commit()
     return c.lastrowid  # 返回新插入记录的ID
 
-# 数据库文件路径
 db_path = 'example.db'
 
 # 确保数据库和表存在

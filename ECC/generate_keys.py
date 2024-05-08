@@ -2,7 +2,7 @@ from Crypto.PublicKey import ECC
 from Crypto.Hash import SHA256
 from Crypto.Signature import DSS
 import json
-from utils import generate_device_id
+from ECC.utils import generate_device_id
 
 
 def generate_keys():
@@ -33,6 +33,9 @@ def main():
         json.dump(license_data, f)
     with open("public_key.pem", "wb") as f:
         f.write(public_key)
+
+    with open("private_key.pem", "wb") as f:
+        f.write(private_key)
 
 
 if __name__ == "__main__":
